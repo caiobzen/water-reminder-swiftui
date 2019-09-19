@@ -11,13 +11,15 @@
 		EB33776F23341E77000D8850 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB33776D23341E77000D8850 /* Interface.storyboard */; };
 		EB33777123341E7B000D8850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33777023341E7B000D8850 /* Assets.xcassets */; };
 		EB33777823341E7B000D8850 /* Waterminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB33777723341E7B000D8850 /* Waterminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EB33777D23341E7B000D8850 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33777C23341E7B000D8850 /* ContentView.swift */; };
+		EB33777D23341E7B000D8850 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33777C23341E7B000D8850 /* WaterView.swift */; };
 		EB33777F23341E7B000D8850 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33777E23341E7B000D8850 /* HostingController.swift */; };
 		EB33778123341E7B000D8850 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33778023341E7B000D8850 /* ExtensionDelegate.swift */; };
 		EB33778323341E7B000D8850 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33778223341E7B000D8850 /* NotificationController.swift */; };
 		EB33778523341E7B000D8850 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33778423341E7B000D8850 /* NotificationView.swift */; };
 		EB33778723341E7D000D8850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33778623341E7D000D8850 /* Assets.xcassets */; };
 		EB33778A23341E7D000D8850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33778923341E7D000D8850 /* Preview Assets.xcassets */; };
+		EB42D9592334289D00EBB5C8 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D9582334289D00EBB5C8 /* Wave.swift */; };
+		EB42D95C2334292300EBB5C8 /* WavingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D95B2334292300EBB5C8 /* WavingBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,7 @@
 		EB33777023341E7B000D8850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB33777223341E7B000D8850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB33777723341E7B000D8850 /* Waterminder WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Waterminder WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB33777C23341E7B000D8850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB33777C23341E7B000D8850 /* WaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		EB33777E23341E7B000D8850 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		EB33778023341E7B000D8850 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		EB33778223341E7B000D8850 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,8 @@
 		EB33778923341E7D000D8850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB33778B23341E7D000D8850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		EB42D9582334289D00EBB5C8 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		EB42D95B2334292300EBB5C8 /* WavingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavingBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,8 @@
 		EB33777B23341E7B000D8850 /* Waterminder WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				EB33777C23341E7B000D8850 /* ContentView.swift */,
+				EB42D95A233428EE00EBB5C8 /* Widgets */,
+				EB33777C23341E7B000D8850 /* WaterView.swift */,
 				EB33777E23341E7B000D8850 /* HostingController.swift */,
 				EB33778023341E7B000D8850 /* ExtensionDelegate.swift */,
 				EB33778223341E7B000D8850 /* NotificationController.swift */,
@@ -142,6 +147,15 @@
 				EB33778923341E7D000D8850 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EB42D95A233428EE00EBB5C8 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				EB42D9582334289D00EBB5C8 /* Wave.swift */,
+				EB42D95B2334292300EBB5C8 /* WavingBackground.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB42D9592334289D00EBB5C8 /* Wave.swift in Sources */,
+				EB42D95C2334292300EBB5C8 /* WavingBackground.swift in Sources */,
 				EB33777F23341E7B000D8850 /* HostingController.swift in Sources */,
-				EB33777D23341E7B000D8850 /* ContentView.swift in Sources */,
+				EB33777D23341E7B000D8850 /* WaterView.swift in Sources */,
 				EB33778323341E7B000D8850 /* NotificationController.swift in Sources */,
 				EB33778123341E7B000D8850 /* ExtensionDelegate.swift in Sources */,
 				EB33778523341E7B000D8850 /* NotificationView.swift in Sources */,
