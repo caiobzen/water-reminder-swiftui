@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB33776923341E77000D8850 /* Waterminder WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EB33776823341E77000D8850 /* Waterminder WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB33776F23341E77000D8850 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB33776D23341E77000D8850 /* Interface.storyboard */; };
+		EB33777123341E7B000D8850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33777023341E7B000D8850 /* Assets.xcassets */; };
+		EB33777823341E7B000D8850 /* Waterminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB33777723341E7B000D8850 /* Waterminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB33777D23341E7B000D8850 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33777C23341E7B000D8850 /* ContentView.swift */; };
+		EB33777F23341E7B000D8850 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33777E23341E7B000D8850 /* HostingController.swift */; };
+		EB33778123341E7B000D8850 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33778023341E7B000D8850 /* ExtensionDelegate.swift */; };
+		EB33778323341E7B000D8850 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33778223341E7B000D8850 /* NotificationController.swift */; };
+		EB33778523341E7B000D8850 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33778423341E7B000D8850 /* NotificationView.swift */; };
+		EB33778723341E7D000D8850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33778623341E7D000D8850 /* Assets.xcassets */; };
+		EB33778A23341E7D000D8850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33778923341E7D000D8850 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB33776A23341E77000D8850 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB33775E23341E77000D8850 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB33776723341E77000D8850;
+			remoteInfo = "Waterminder WatchKit App";
+		};
+		EB33777923341E7B000D8850 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB33775E23341E77000D8850 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB33777623341E7B000D8850;
+			remoteInfo = "Waterminder WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB33779223341E7D000D8850 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EB33777823341E7B000D8850 /* Waterminder WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB33779623341E7D000D8850 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				EB33776923341E77000D8850 /* Waterminder WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EB33776423341E77000D8850 /* Waterminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waterminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB33776823341E77000D8850 /* Waterminder WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterminder WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB33776E23341E77000D8850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		EB33777023341E7B000D8850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB33777223341E7B000D8850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB33777723341E7B000D8850 /* Waterminder WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Waterminder WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB33777C23341E7B000D8850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB33777E23341E7B000D8850 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		EB33778023341E7B000D8850 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		EB33778223341E7B000D8850 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		EB33778423341E7B000D8850 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		EB33778623341E7D000D8850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB33778923341E7D000D8850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EB33778B23341E7D000D8850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB33777423341E7B000D8850 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB33775D23341E77000D8850 = {
+			isa = PBXGroup;
+			children = (
+				EB33776C23341E77000D8850 /* Waterminder WatchKit App */,
+				EB33777B23341E7B000D8850 /* Waterminder WatchKit Extension */,
+				EB33776523341E77000D8850 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB33776523341E77000D8850 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB33776423341E77000D8850 /* Waterminder.app */,
+				EB33776823341E77000D8850 /* Waterminder WatchKit App.app */,
+				EB33777723341E7B000D8850 /* Waterminder WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB33776C23341E77000D8850 /* Waterminder WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				EB33776D23341E77000D8850 /* Interface.storyboard */,
+				EB33777023341E7B000D8850 /* Assets.xcassets */,
+				EB33777223341E7B000D8850 /* Info.plist */,
+			);
+			path = "Waterminder WatchKit App";
+			sourceTree = "<group>";
+		};
+		EB33777B23341E7B000D8850 /* Waterminder WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EB33777C23341E7B000D8850 /* ContentView.swift */,
+				EB33777E23341E7B000D8850 /* HostingController.swift */,
+				EB33778023341E7B000D8850 /* ExtensionDelegate.swift */,
+				EB33778223341E7B000D8850 /* NotificationController.swift */,
+				EB33778423341E7B000D8850 /* NotificationView.swift */,
+				EB33778623341E7D000D8850 /* Assets.xcassets */,
+				EB33778B23341E7D000D8850 /* Info.plist */,
+				EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */,
+				EB33778823341E7D000D8850 /* Preview Content */,
+			);
+			path = "Waterminder WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		EB33778823341E7D000D8850 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EB33778923341E7D000D8850 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB33776323341E77000D8850 /* Waterminder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB33779723341E7D000D8850 /* Build configuration list for PBXNativeTarget "Waterminder" */;
+			buildPhases = (
+				EB33776223341E77000D8850 /* Resources */,
+				EB33779623341E7D000D8850 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB33776B23341E77000D8850 /* PBXTargetDependency */,
+			);
+			name = Waterminder;
+			productName = Waterminder;
+			productReference = EB33776423341E77000D8850 /* Waterminder.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		EB33776723341E77000D8850 /* Waterminder WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB33779323341E7D000D8850 /* Build configuration list for PBXNativeTarget "Waterminder WatchKit App" */;
+			buildPhases = (
+				EB33776623341E77000D8850 /* Resources */,
+				EB33779223341E7D000D8850 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB33777A23341E7B000D8850 /* PBXTargetDependency */,
+			);
+			name = "Waterminder WatchKit App";
+			productName = "Waterminder WatchKit App";
+			productReference = EB33776823341E77000D8850 /* Waterminder WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		EB33777623341E7B000D8850 /* Waterminder WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB33778F23341E7D000D8850 /* Build configuration list for PBXNativeTarget "Waterminder WatchKit Extension" */;
+			buildPhases = (
+				EB33777323341E7B000D8850 /* Sources */,
+				EB33777423341E7B000D8850 /* Frameworks */,
+				EB33777523341E7B000D8850 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Waterminder WatchKit Extension";
+			productName = "Waterminder WatchKit Extension";
+			productReference = EB33777723341E7B000D8850 /* Waterminder WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB33775E23341E77000D8850 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Carlos Corrêa";
+				TargetAttributes = {
+					EB33776323341E77000D8850 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					EB33776723341E77000D8850 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					EB33777623341E7B000D8850 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = EB33776123341E77000D8850 /* Build configuration list for PBXProject "Waterminder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB33775D23341E77000D8850;
+			productRefGroup = EB33776523341E77000D8850 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB33776323341E77000D8850 /* Waterminder */,
+				EB33776723341E77000D8850 /* Waterminder WatchKit App */,
+				EB33777623341E7B000D8850 /* Waterminder WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB33776223341E77000D8850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB33776623341E77000D8850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB33777123341E7B000D8850 /* Assets.xcassets in Resources */,
+				EB33776F23341E77000D8850 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB33777523341E7B000D8850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB33778A23341E7D000D8850 /* Preview Assets.xcassets in Resources */,
+				EB33778723341E7D000D8850 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB33777323341E7B000D8850 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB33777F23341E7B000D8850 /* HostingController.swift in Sources */,
+				EB33777D23341E7B000D8850 /* ContentView.swift in Sources */,
+				EB33778323341E7B000D8850 /* NotificationController.swift in Sources */,
+				EB33778123341E7B000D8850 /* ExtensionDelegate.swift in Sources */,
+				EB33778523341E7B000D8850 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB33776B23341E77000D8850 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB33776723341E77000D8850 /* Waterminder WatchKit App */;
+			targetProxy = EB33776A23341E77000D8850 /* PBXContainerItemProxy */;
+		};
+		EB33777A23341E7B000D8850 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB33777623341E7B000D8850 /* Waterminder WatchKit Extension */;
+			targetProxy = EB33777923341E7B000D8850 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB33776D23341E77000D8850 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB33776E23341E77000D8850 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB33778D23341E7D000D8850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB33778E23341E7D000D8850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB33779023341E7D000D8850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Waterminder WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 74SMNA83A6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Waterminder WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccorrea.Waterminder.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		EB33779123341E7D000D8850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Waterminder WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 74SMNA83A6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Waterminder WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccorrea.Waterminder.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		EB33779423341E7D000D8850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74SMNA83A6;
+				IBSC_MODULE = Waterminder_WatchKit_Extension;
+				INFOPLIST_FILE = "Waterminder WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccorrea.Waterminder.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		EB33779523341E7D000D8850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74SMNA83A6;
+				IBSC_MODULE = Waterminder_WatchKit_Extension;
+				INFOPLIST_FILE = "Waterminder WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccorrea.Waterminder.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		EB33779823341E7D000D8850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74SMNA83A6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccorrea.Waterminder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EB33779923341E7D000D8850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74SMNA83A6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccorrea.Waterminder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB33776123341E77000D8850 /* Build configuration list for PBXProject "Waterminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB33778D23341E7D000D8850 /* Debug */,
+				EB33778E23341E7D000D8850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB33778F23341E7D000D8850 /* Build configuration list for PBXNativeTarget "Waterminder WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB33779023341E7D000D8850 /* Debug */,
+				EB33779123341E7D000D8850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB33779323341E7D000D8850 /* Build configuration list for PBXNativeTarget "Waterminder WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB33779423341E7D000D8850 /* Debug */,
+				EB33779523341E7D000D8850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB33779723341E7D000D8850 /* Build configuration list for PBXNativeTarget "Waterminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB33779823341E7D000D8850 /* Debug */,
+				EB33779923341E7D000D8850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB33775E23341E77000D8850 /* Project object */;
+}
