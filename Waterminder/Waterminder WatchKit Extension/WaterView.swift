@@ -45,7 +45,7 @@ struct WaterView: View {
             .shadow(radius: 1)
         }
         .focusable()
-        .digitalCrownRotation($amount, from: 50, through: 1000, by: 50, sensitivity: .medium)
+        .digitalCrownRotation($amount, from: 50, through: self.target, by: 50, sensitivity: .medium)
         .edgesIgnoringSafeArea(.all)
     }
 }
