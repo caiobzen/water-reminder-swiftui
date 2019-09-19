@@ -15,18 +15,16 @@ struct WavingBackground: View {
     var body: some View {
         ZStack {
             Wave(graphWidth: 1, amplitude: 0.05)
-                .foregroundColor(Color(red: 0, green: 0.8, blue: 1))
                 .offset(x: 0, y: offsetY)
-                .animation(repeatingAnimation)
                 .onAppear { self.offsetY = 65 }
             
             Wave(graphWidth: 1, amplitude: 0.05)
-                 .foregroundColor(Color(red: 0, green: 0.8, blue: 1))
                  .opacity(0.7)
                  .offset(x: 70, y: backgroundOffsetY)
-                 .animation(repeatingAnimation)
                  .onAppear { self.backgroundOffsetY = 65 }
         }
+        .animation(repeatingAnimation)
+        .foregroundColor(Color(red: 0, green: 0.8, blue: 1))
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
     }
