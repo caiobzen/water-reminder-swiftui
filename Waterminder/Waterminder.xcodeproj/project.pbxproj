@@ -23,6 +23,7 @@
 		EB42D95E2334510C00EBB5C8 /* DrinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D95D2334510C00EBB5C8 /* DrinkButton.swift */; };
 		EB42D9602334547300EBB5C8 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D95F2334547300EBB5C8 /* Double+Extensions.swift */; };
 		EB42D96323345A1F00EBB5C8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D96223345A1F00EBB5C8 /* MenuView.swift */; };
+		EB42D9652335306F00EBB5C8 /* WaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D9642335306F00EBB5C8 /* WaterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		EB42D95D2334510C00EBB5C8 /* DrinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkButton.swift; sourceTree = "<group>"; };
 		EB42D95F2334547300EBB5C8 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		EB42D96223345A1F00EBB5C8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		EB42D9642335306F00EBB5C8 /* WaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				EB33778B23341E7D000D8850 /* Info.plist */,
 				EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */,
 				EB33778823341E7D000D8850 /* Preview Content */,
+				EB42D9642335306F00EBB5C8 /* WaterViewModel.swift */,
 			);
 			path = "Waterminder WatchKit Extension";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				EB33777D23341E7B000D8850 /* WaterView.swift in Sources */,
 				EB33778323341E7B000D8850 /* NotificationController.swift in Sources */,
 				EB33778123341E7B000D8850 /* ExtensionDelegate.swift in Sources */,
+				EB42D9652335306F00EBB5C8 /* WaterViewModel.swift in Sources */,
 				EB33778523341E7B000D8850 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

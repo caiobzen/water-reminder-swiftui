@@ -3,7 +3,8 @@ import Foundation
 import SwiftUI
 
 class HostingController: WKHostingController<WaterView> {
+    let viewModel = WaterViewModel()
     override var body: WaterView {
-        return WaterView()
+        WaterView(viewModel: viewModel)
     }
 }
