@@ -11,10 +11,10 @@ struct WaterView: View {
             WavingBackground(fill: waterLevel)
             VStack {
                 targetLabel()
-                if drinkingTarget != .zero {
-                    DrinkButton(text: drinkingAmount.toMilliliters(), action: self.drink)
-                } else {
+                if isGoalReached {
                     resetButton()
+                } else {
+                    DrinkButton(text: drinkingAmount.toMilliliters(), action: self.drink)
                 }
             }
         }
@@ -43,12 +43,16 @@ struct WaterView: View {
 }
 
 extension WaterView {
+    private var isGoalReached: Bool {
+        round(drinkingTarget) == .zero
+    }
+    
     private var minimumInterval: Double {
         min(50, drinkingTarget)
     }
     
     private var targetText: String {
-        drinkingTarget == .zero
+        isGoalReached
             ? "💦 Nice job! 💦"
             : "Target: \(drinkingTarget.toMilliliters())"
     }
