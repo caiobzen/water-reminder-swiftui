@@ -5,17 +5,22 @@ struct MenuView: View {
     var newTargetSelected: (Double) -> Void
     var body: some View {
         VStack {
-            Text("New target")
+            Text("Select the target")
+                .font(.system(.headline, design: .rounded))
+            Spacer()
             Text(target.toMilliliters())
+                .font(.system(size: 24, weight: .semibold, design: .rounded))
+                .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
+            Spacer()
             Button(action: {
                 self.newTargetSelected(self.target)
             }) {
                 Text("Save")
-                .padding(16)
             }
+            .padding(.horizontal, 20)
         }
         .focusable()
-        .digitalCrownRotation($target, from: 100.0, through: 10000.0)
+        .digitalCrownRotation($target, from: 100.0, through: 10000.0, by: 50)
     }
 }
     

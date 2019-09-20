@@ -19,10 +19,7 @@ struct WaterView: View {
             }
         }
         .focusable()
-        .digitalCrownRotation($drinkingAmount, from: minimumInterval,
-                                    through: drinkingTarget,
-                                         by: 50,
-                                sensitivity: .medium)
+        .digitalCrownRotation($drinkingAmount, from: minimumInterval, through: drinkingTarget, by: 50, sensitivity: .low)
         .edgesIgnoringSafeArea(.all)
         .contextMenu(menuItems: { setupButton() })
         .sheet(isPresented: $isShowingMenu) { self.menu() }
