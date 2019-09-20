@@ -24,6 +24,6 @@ Since this project has zero dependencies on external frameworks, all you need is
 1. Persist the Water target during sessions
 2. Create a daily log
 
-### Preview
+### ⌚ Preview
 
 ![App Preview](drink-water-app.gif)
