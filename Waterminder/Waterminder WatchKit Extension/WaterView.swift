@@ -3,50 +3,58 @@ import SwiftUI
 struct WaterView: View {
     @State var amount = 100.0
     @State var target = 2000.0
-    @State var fillValue: CGFloat = 0.0
-    
-    private var amountText: String {
-        "\(Int(amount).description)ml"
-    }
+    @State var fillValue: CGFloat = .zero
     
     private var targetText: String {
         target == .zero
             ? "Nice job!"
-            : "Target: \(Int(target).description)ml"
+            : "Target: \(target.toMilliliters())"
     }
     
     private func drink() {
-        guard target - amount >= .zero else { return }
+        guard round(target - amount) >= .zero else { return }
         target -= amount
         fillValue += CGFloat(amount / 10)
+        amount = min(amount, target)
+    }
+    
+    private func reset() {
+        fillValue = .zero
+        target = 2000
+        amount = 100
     }
     
     var body: some View {
         ZStack(alignment: .center) {
             WavingBackground(fill: fillValue)
             VStack {
-                Text(targetText)
-                .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    
+                targetLabel()
                 if target != .zero {
-                    Button(action: {
-                        withAnimation { self.drink() }
-                    }) {
-                        HStack(alignment: .center, spacing: 24) {
-                            Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            Text(amountText)
-                        }
-                        }
-                    .frame(width: 130, height: 50)
+                    DrinkButton(text: amount.toMilliliters(), action: self.drink)
+                } else {
+                    resetButton()
                 }
             }
-            .shadow(radius: 1)
         }
         .focusable()
-        .digitalCrownRotation($amount, from: 50, through: self.target, by: 50, sensitivity: .medium)
+        .digitalCrownRotation($amount, from: 50, through: self.target, sensitivity: .medium)
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+extension WaterView {
+    func targetLabel() -> some View {
+        Text(targetText)
+        .font(.system(size: 20, weight: .semibold, design: .rounded))
+    }
+    
+    func resetButton() -> some View {
+        Button(action: {
+            withAnimation { self.reset() }
+        }) { Text("Reset!") }
+        .frame(width: 80, height: 40)
+        .accentColor(.black)
+        .offset(x: 0, y: 30)
     }
 }
 

@@ -20,6 +20,8 @@
 		EB33778A23341E7D000D8850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33778923341E7D000D8850 /* Preview Assets.xcassets */; };
 		EB42D9592334289D00EBB5C8 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D9582334289D00EBB5C8 /* Wave.swift */; };
 		EB42D95C2334292300EBB5C8 /* WavingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D95B2334292300EBB5C8 /* WavingBackground.swift */; };
+		EB42D95E2334510C00EBB5C8 /* DrinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D95D2334510C00EBB5C8 /* DrinkButton.swift */; };
+		EB42D9602334547300EBB5C8 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42D95F2334547300EBB5C8 /* Double+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		EB42D9582334289D00EBB5C8 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		EB42D95B2334292300EBB5C8 /* WavingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavingBackground.swift; sourceTree = "<group>"; };
+		EB42D95D2334510C00EBB5C8 /* DrinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkButton.swift; sourceTree = "<group>"; };
+		EB42D95F2334547300EBB5C8 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 				EB33778023341E7B000D8850 /* ExtensionDelegate.swift */,
 				EB33778223341E7B000D8850 /* NotificationController.swift */,
 				EB33778423341E7B000D8850 /* NotificationView.swift */,
+				EB42D961233454DE00EBB5C8 /* Extensions */,
 				EB33778623341E7D000D8850 /* Assets.xcassets */,
 				EB33778B23341E7D000D8850 /* Info.plist */,
 				EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */,
@@ -154,8 +159,17 @@
 			children = (
 				EB42D9582334289D00EBB5C8 /* Wave.swift */,
 				EB42D95B2334292300EBB5C8 /* WavingBackground.swift */,
+				EB42D95D2334510C00EBB5C8 /* DrinkButton.swift */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		EB42D961233454DE00EBB5C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB42D95F2334547300EBB5C8 /* Double+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB42D95E2334510C00EBB5C8 /* DrinkButton.swift in Sources */,
 				EB42D9592334289D00EBB5C8 /* Wave.swift in Sources */,
 				EB42D95C2334292300EBB5C8 /* WavingBackground.swift in Sources */,
+				EB42D9602334547300EBB5C8 /* Double+Extensions.swift in Sources */,
 				EB33777F23341E7B000D8850 /* HostingController.swift in Sources */,
 				EB33777D23341E7B000D8850 /* WaterView.swift in Sources */,
 				EB33778323341E7B000D8850 /* NotificationController.swift in Sources */,
