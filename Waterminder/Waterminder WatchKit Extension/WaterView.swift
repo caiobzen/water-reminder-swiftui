@@ -1,60 +1,75 @@
 import SwiftUI
 
 struct WaterView: View {
-    @State var amount = 100.0
-    @State var target = 2000.0
-    @State var fillValue: CGFloat = .zero
+    @State var drinkingAmount = 100.0
+    @State var drinkingTarget = 2000.0
+    @State var waterLevel: CGFloat = .zero
     @State var isShowingMenu = false
-    
-    private var targetText: String {
-        target == .zero
-            ? "Nice job!"
-            : "Target: \(target.toMilliliters())"
-    }
-    
-    private func drink() {
-        guard round(target - amount) >= .zero else { return }
-        target -= amount
-        fillValue += CGFloat(amount / 10)
-        amount = min(amount, target)
-    }
-    
-    private func reset() {
-        fillValue = .zero
-        target = 2000
-        amount = 100
-    }
-    
+        
     var body: some View {
         ZStack(alignment: .center) {
-            WavingBackground(fill: fillValue)
+            WavingBackground(fill: waterLevel)
             VStack {
                 targetLabel()
-                if target != .zero {
-                    DrinkButton(text: amount.toMilliliters(), action: self.drink)
+                if drinkingTarget != .zero {
+                    DrinkButton(text: drinkingAmount.toMilliliters(), action: self.drink)
                 } else {
                     resetButton()
                 }
             }
         }
         .focusable()
-        .digitalCrownRotation($amount, from: 50, through: self.target, sensitivity: .medium)
+        .digitalCrownRotation($drinkingAmount, from: minimumInterval,
+                                    through: self.drinkingTarget,
+                                         by: 50,
+                                sensitivity: .medium)
         .edgesIgnoringSafeArea(.all)
-        .contextMenu(menuItems: {
-            Button(action: {
-                self.isShowingMenu.toggle()
-            }) { Text("Setup").padding() }
-        })
-        .sheet(isPresented: $isShowingMenu) {
-            MenuView()
-        }
+        .contextMenu(menuItems: { setupButton() })
+        .sheet(isPresented: $isShowingMenu) { self.menu() }
+    }
+    
+    private func drink() {
+        guard floor(drinkingTarget - drinkingAmount) >= .zero else { return }
+        drinkingTarget -= round(drinkingAmount)
+        waterLevel += CGFloat(drinkingAmount / 10)
+        drinkingAmount = min(drinkingAmount, drinkingTarget)
+    }
+    
+    private func reset() {
+        waterLevel = .zero
+        drinkingTarget = 2000
+        drinkingAmount = 100
     }
 }
 
 extension WaterView {
+    private var minimumInterval: Double {
+        min(50, drinkingTarget)
+    }
+    
+    private var targetText: String {
+        drinkingTarget == .zero
+            ? "💦 Nice job! 💦"
+            : "Target: \(drinkingTarget.toMilliliters())"
+    }
+    
     func targetLabel() -> some View {
         Text(targetText)
         .font(.system(size: 20, weight: .semibold, design: .rounded))
+    }
+    
+    func menu() -> some View {
+        MenuView(target: self.drinkingTarget) { newTarget in
+            self.reset()
+            self.drinkingTarget = newTarget
+            self.isShowingMenu.toggle()
+        }
+    }
+    
+    func setupButton() -> some View {
+        Button(action: {
+            self.isShowingMenu.toggle()
+        }) { Text("Setup").padding() }
     }
     
     func resetButton() -> some View {
