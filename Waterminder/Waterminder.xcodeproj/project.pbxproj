@@ -135,9 +135,8 @@
 		EB33777B23341E7B000D8850 /* Waterminder WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				EB42D966233531B200EBB5C8 /* Screens */,
 				EB42D95A233428EE00EBB5C8 /* Widgets */,
-				EB33777C23341E7B000D8850 /* WaterView.swift */,
-				EB42D96223345A1F00EBB5C8 /* MenuView.swift */,
 				EB33777E23341E7B000D8850 /* HostingController.swift */,
 				EB33778023341E7B000D8850 /* ExtensionDelegate.swift */,
 				EB33778223341E7B000D8850 /* NotificationController.swift */,
@@ -147,7 +146,6 @@
 				EB33778B23341E7D000D8850 /* Info.plist */,
 				EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */,
 				EB33778823341E7D000D8850 /* Preview Content */,
-				EB42D9642335306F00EBB5C8 /* WaterViewModel.swift */,
 			);
 			path = "Waterminder WatchKit Extension";
 			sourceTree = "<group>";
@@ -176,6 +174,16 @@
 				EB42D95F2334547300EBB5C8 /* Double+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB42D966233531B200EBB5C8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EB33777C23341E7B000D8850 /* WaterView.swift */,
+				EB42D9642335306F00EBB5C8 /* WaterViewModel.swift */,
+				EB42D96223345A1F00EBB5C8 /* MenuView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
