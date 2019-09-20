@@ -4,6 +4,7 @@ struct WaterView: View {
     @State var amount = 100.0
     @State var target = 2000.0
     @State var fillValue: CGFloat = .zero
+    @State var isShowingMenu = false
     
     private var targetText: String {
         target == .zero
@@ -39,6 +40,14 @@ struct WaterView: View {
         .focusable()
         .digitalCrownRotation($amount, from: 50, through: self.target, sensitivity: .medium)
         .edgesIgnoringSafeArea(.all)
+        .contextMenu(menuItems: {
+            Button(action: {
+                self.isShowingMenu.toggle()
+            }) { Text("Setup").padding() }
+        })
+        .sheet(isPresented: $isShowingMenu) {
+            MenuView()
+        }
     }
 }
 
