@@ -2,7 +2,14 @@ import SwiftUI
 
 struct NotificationView: View {
     var body: some View {
-        Text("Hello World")
+        VStack {
+            Text("Remember to")
+            .font(.system(size: 18, weight: .regular, design: .rounded))
+            Spacer()
+            Text("💦 Drink Water! 💦")
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+            Spacer()
+        }
     }
 }
 
