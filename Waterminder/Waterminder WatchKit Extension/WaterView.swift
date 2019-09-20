@@ -14,13 +14,13 @@ struct WaterView: View {
                 if isGoalReached {
                     resetButton()
                 } else {
-                    DrinkButton(text: drinkingAmount.toMilliliters(), action: self.drink)
+                    DrinkButton(text: drinkingAmount.toMilliliters(), action: drink)
                 }
             }
         }
         .focusable()
         .digitalCrownRotation($drinkingAmount, from: minimumInterval,
-                                    through: self.drinkingTarget,
+                                    through: drinkingTarget,
                                          by: 50,
                                 sensitivity: .medium)
         .edgesIgnoringSafeArea(.all)
@@ -63,7 +63,7 @@ extension WaterView {
     }
     
     func menu() -> some View {
-        MenuView(target: self.drinkingTarget) { newTarget in
+        MenuView(target: drinkingTarget) { newTarget in
             self.reset()
             self.drinkingTarget = newTarget
             self.isShowingMenu.toggle()
