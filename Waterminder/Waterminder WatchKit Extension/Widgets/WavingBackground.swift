@@ -23,27 +23,8 @@ struct WavingBackground <Content: View>: View {
     var body: some View {
         ZStack {
             VStack {
-                ZStack {
-                    Wave(graphWidth: 1, amplitude: 0.05)
-                        .offset(x: offsetX, y: offsetY)
-                        .onAppear {
-                            self.offsetY = 65
-                            self.offsetX = -5
-                    }
-                    
-                    Wave(graphWidth: 1, amplitude: 0.05)
-                         .opacity(0.7)
-                         .offset(x: backgroundOffsetX, y: backgroundOffsetY)
-                         .onAppear {
-                            self.backgroundOffsetY = 70
-                            self.backgroundOffsetX = 75
-                    }
-                }
-                .animation(repeatingAnimation)
-                .frame(width: 200, height: 200)
-                
-                Rectangle()
-                .frame(width: 200, height: fill)
+                waves()
+                fillingRectangle()
             }
             .offset(x: 0, y: 40)
             .foregroundColor(Color(red: 0, green: 0.8, blue: 1))
@@ -52,6 +33,34 @@ struct WavingBackground <Content: View>: View {
             
             content
         }
+    }
+}
+
+extension WavingBackground {
+    func waves() -> some View {
+        ZStack {
+            Wave(graphWidth: 1, amplitude: 0.05)
+                .offset(x: offsetX, y: offsetY)
+                .onAppear {
+                    self.offsetY = 65
+                    self.offsetX = -5
+            }
+            
+            Wave(graphWidth: 1, amplitude: 0.05)
+                 .opacity(0.7)
+                 .offset(x: backgroundOffsetX, y: backgroundOffsetY)
+                 .onAppear {
+                    self.backgroundOffsetY = 70
+                    self.backgroundOffsetX = 75
+            }
+        }
+        .animation(repeatingAnimation)
+        .frame(width: 200, height: 200)
+    }
+    
+    func fillingRectangle() -> some View {
+        Rectangle()
+        .frame(width: 200, height: fill)
     }
 }
 
