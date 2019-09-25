@@ -6,8 +6,7 @@ struct WaterView: View {
     @State var isShowingMenu = false
         
     var body: some View {
-        ZStack(alignment: .center) {
-            WavingBackground(fill: viewModel.waterLevel)
+        WavingBackground(fill: viewModel.waterLevel) {
             VStack {
                 targetLabel()
                 if viewModel.isGoalReached {
@@ -20,7 +19,9 @@ struct WaterView: View {
         .focusable()
         .digitalCrownRotation($viewModel.drinkingAmount, from: viewModel.minimumInterval, through: viewModel.drinkingTarget, by: 50, sensitivity: .low)
         .edgesIgnoringSafeArea(.all)
-        .contextMenu(menuItems: { setupButton() })
+        .contextMenu(menuItems: {
+            setupButton()
+        })
         .sheet(isPresented: $isShowingMenu) { self.menu() }
     }
 }
