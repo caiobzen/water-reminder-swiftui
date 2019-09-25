@@ -15,7 +15,7 @@ struct WavingBackground <Content: View>: View {
             .repeatForever()
     }
     
-    @inlinable public init(fill: CGFloat = .zero, @ViewBuilder content: () -> Content) {
+    init(fill: CGFloat = .zero, @ViewBuilder content: () -> Content) {
         self.fill = fill
         self.content = content()
     }
@@ -66,7 +66,7 @@ extension WavingBackground {
 
 struct WavingBackground_Previews: PreviewProvider {
     static var previews: some View {
-        WavingBackground(fill: 10) {
+        WavingBackground(fill: 60) {
             Text("Hey!")
         }
     }
