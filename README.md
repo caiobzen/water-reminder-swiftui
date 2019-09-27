@@ -9,6 +9,7 @@
 ### 💦 The App
 
 This is just another app to motivate you to track how much water you drink throuhgout the day.
+There's an article [HERE](https://medium.com/@caiobzen/fast-app-prototyping-with-swiftui-39ae03ab3eaa) explaining how I build this app.
 
 ### 🌊 Motivation
 
