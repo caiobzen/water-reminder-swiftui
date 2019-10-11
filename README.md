@@ -27,6 +27,7 @@ Since this project has zero dependencies on external frameworks, all you need is
 ### ☑️ Todo
 1. Persist the Water target during sessions
 2. Create a daily log
+3. Integrate with HealthKit
 
 ### ⌚ Preview
 
