@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B92935925D2244F0053891D /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92935825D2244F0053891D /* HealthKitSetupAssistant.swift */; };
+		8B92936025D224820053891D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B92935F25D224820053891D /* HealthKit.framework */; };
 		EB33776923341E77000D8850 /* Waterminder WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EB33776823341E77000D8850 /* Waterminder WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EB33776F23341E77000D8850 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB33776D23341E77000D8850 /* Interface.storyboard */; };
 		EB33777123341E7B000D8850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB33777023341E7B000D8850 /* Assets.xcassets */; };
@@ -69,6 +71,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B92935825D2244F0053891D /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		8B92935D25D224820053891D /* Waterminder WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Waterminder WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		8B92935F25D224820053891D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		8B92936425D2249A0053891D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB33776423341E77000D8850 /* Waterminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waterminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB33776823341E77000D8850 /* Waterminder WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterminder WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB33776E23341E77000D8850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -82,7 +88,6 @@
 		EB33778423341E7B000D8850 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		EB33778623341E7D000D8850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB33778923341E7D000D8850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EB33778B23341E7D000D8850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		EB42D9582334289D00EBB5C8 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		EB42D95B2334292300EBB5C8 /* WavingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavingBackground.swift; sourceTree = "<group>"; };
@@ -97,18 +102,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B92936025D224820053891D /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B92935E25D224820053891D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B92935F25D224820053891D /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB33775D23341E77000D8850 = {
 			isa = PBXGroup;
 			children = (
 				EB33776C23341E77000D8850 /* Waterminder WatchKit App */,
 				EB33777B23341E7B000D8850 /* Waterminder WatchKit Extension */,
 				EB33776523341E77000D8850 /* Products */,
+				8B92935E25D224820053891D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,16 +150,18 @@
 		EB33777B23341E7B000D8850 /* Waterminder WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8B92935D25D224820053891D /* Waterminder WatchKit Extension.entitlements */,
 				EB42D966233531B200EBB5C8 /* Screens */,
 				EB42D95A233428EE00EBB5C8 /* Widgets */,
 				EB33777E23341E7B000D8850 /* HostingController.swift */,
+				8B92935825D2244F0053891D /* HealthKitSetupAssistant.swift */,
 				EB33778023341E7B000D8850 /* ExtensionDelegate.swift */,
 				EB33778223341E7B000D8850 /* NotificationController.swift */,
 				EB33778423341E7B000D8850 /* NotificationView.swift */,
 				EB42D961233454DE00EBB5C8 /* Extensions */,
 				EB33778623341E7D000D8850 /* Assets.xcassets */,
-				EB33778B23341E7D000D8850 /* Info.plist */,
 				EB33778C23341E7D000D8850 /* PushNotificationPayload.apns */,
+				8B92936425D2249A0053891D /* Info.plist */,
 				EB33778823341E7D000D8850 /* Preview Content */,
 			);
 			path = "Waterminder WatchKit Extension";
@@ -323,6 +340,7 @@
 				EB33777D23341E7B000D8850 /* WaterView.swift in Sources */,
 				EB33778323341E7B000D8850 /* NotificationController.swift in Sources */,
 				EB33778123341E7B000D8850 /* ExtensionDelegate.swift in Sources */,
+				8B92935925D2244F0053891D /* HealthKitSetupAssistant.swift in Sources */,
 				EB42D9652335306F00EBB5C8 /* WaterViewModel.swift in Sources */,
 				EB33778523341E7B000D8850 /* NotificationView.swift in Sources */,
 			);
@@ -471,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Waterminder WatchKit Extension/Waterminder WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Waterminder WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 74SMNA83A6;
@@ -495,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Waterminder WatchKit Extension/Waterminder WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Waterminder WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 74SMNA83A6;
