@@ -34,10 +34,10 @@ class WaterViewModel: ObservableObject {
     
     func didTapDrink() {
         guard floor(drinkingTarget - drinkingAmount) >= .zero else { return }
+        saveToHealthKit()
         drinkingTarget -= round(drinkingAmount)
         waterLevel += CGFloat(drinkingAmount / 10)
         drinkingAmount = min(drinkingAmount, drinkingTarget)
-        saveToHealthKit()
     }
     
     private func saveToHealthKit() {
