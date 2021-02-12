@@ -6,6 +6,13 @@ class WaterViewModel: ObservableObject {
     var drinkingAmount: Double = 100.0
     var drinkingTarget = 2000.0
     var waterLevel: CGFloat = .zero
+    var isFirstUserInteraction: Bool {
+        if let status = UserDefaults.standard.value(forKey: UserDefaultsConstant.firstUserInteraction) as? Bool {
+            return status
+        } else {
+            return true
+        }
+    }
     
     var isGoalReached: Bool {
         round(drinkingTarget) == .zero
@@ -27,9 +34,19 @@ class WaterViewModel: ObservableObject {
     
     func didTapDrink() {
         guard floor(drinkingTarget - drinkingAmount) >= .zero else { return }
+        saveToHealthKit()
         drinkingTarget -= round(drinkingAmount)
         waterLevel += CGFloat(drinkingAmount / 10)
         drinkingAmount = min(drinkingAmount, drinkingTarget)
+    }
+    
+    private func saveToHealthKit() {
+        let healthKit = HealthKitSetupAssistant()
+        if isFirstUserInteraction {
+            healthKit.requestPermissions()
+            UserDefaults.standard.setValue(false, forKey: UserDefaultsConstant.firstUserInteraction)
+        }
+        healthKit.addWater(waterAmount: drinkingAmount, forDate: Date())
     }
     
     func didTapReset() {
