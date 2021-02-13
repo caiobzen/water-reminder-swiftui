@@ -35,7 +35,7 @@ extension WaterView {
     func menu() -> some View {
         MenuView(target: viewModel.drinkingTarget) { newTarget in
             self.viewModel.didTapReset()
-            self.viewModel.drinkingTarget = newTarget
+            self.viewModel.updateTarget(newTarget: newTarget)
             self.isShowingMenu.toggle()
         }
     }
