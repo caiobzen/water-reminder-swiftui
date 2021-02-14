@@ -4,7 +4,6 @@ import UIKit
 class WaterViewModel: ObservableObject {
     @Published
     var drinkingAmount: Double = 100.0
-    var drinkingTarget = 2000.0
     var waterLevel: CGFloat = .zero
     var isFirstUserInteraction: Bool {
         if let status = UserDefaults.standard.value(forKey: UserDefaultsConstant.firstUserInteraction) as? Bool {
@@ -13,6 +12,12 @@ class WaterViewModel: ObservableObject {
             return true
         }
     }
+    var drinkingTarget: Double = {
+        guard let target = UserDefaults.standard.value(forKey: UserDefaultsConstant.waterTarget) as? Double else {
+            return 2000.0
+        }
+        return target
+    }()
     
     var isGoalReached: Bool {
         round(drinkingTarget) == .zero
@@ -49,9 +54,18 @@ class WaterViewModel: ObservableObject {
         healthKit.addWater(waterAmount: drinkingAmount, forDate: Date())
     }
     
+    func updateTarget(newTarget: Double) {
+        drinkingTarget = newTarget
+        UserDefaults.standard.setValue(drinkingTarget, forKey: UserDefaultsConstant.waterTarget)
+    }
+    
     func didTapReset() {
         waterLevel = .zero
-        drinkingTarget = 2000
+        if let target = UserDefaults.standard.value(forKey: UserDefaultsConstant.waterTarget) as? Double {
+            drinkingTarget = target
+        } else {
+            drinkingTarget = 2000.0
+        }
         drinkingAmount = 100
     }
 }
