@@ -19,16 +19,16 @@ struct MenuView: View {
                     .onTapGesture {
                         selectedUnit = selectedUnit == .milliliters ? .fluidOunces : .milliliters
                     }
-                    .background(
-                        RoundedRectangle(cornerRadius: 25.0)
-                            .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
-                            .foregroundColor(.gray.opacity(isMilliliters ? 0.2 : 0))
-                    )
                 Image(systemName: "checkmark.circle.fill")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .opacity(isMilliliters ? 1 : 0)
             }
+            .background(
+                RoundedRectangle(cornerRadius: 25.0)
+                    .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
+                    .foregroundColor(.gray.opacity(isMilliliters ? 0.2 : 0))
+            )
             Spacer()
             HStack(spacing: 16) {
                 Text(target.toOunces())
@@ -37,16 +37,16 @@ struct MenuView: View {
                     .onTapGesture {
                         selectedUnit = isMilliliters ? .fluidOunces : .milliliters
                     }
-                    .background(
-                        RoundedRectangle(cornerRadius: 25.0)
-                            .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
-                            .foregroundColor(.gray.opacity(isMilliliters ? 0 : 0.2))
-                    )
                 Image(systemName: "checkmark.circle.fill")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .opacity(isMilliliters ? 0 : 1)
             }
+            .background(
+                RoundedRectangle(cornerRadius: 25.0)
+                    .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
+                    .foregroundColor(.gray.opacity(isMilliliters ? 0 : 0.2))
+            )
             Spacer()
             Button(action: {
                 self.newSelections(self.target, self.selectedUnit)
