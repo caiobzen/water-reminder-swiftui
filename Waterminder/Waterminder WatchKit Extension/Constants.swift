@@ -11,4 +11,5 @@ import Foundation
 enum UserDefaultsConstant {
     static let firstUserInteraction = "firstUserInteraction"
     static let waterTarget = "waterTarget"
+    static let chosenUnit = "chosenUnit"
 }

@@ -5,6 +5,9 @@ class WaterViewModel: ObservableObject {
     @Published
     var drinkingAmount: Double = 100.0
     var waterLevel: CGFloat = .zero
+    var isMilliliters: Bool {
+        chosenUnit == .milliliters
+    }
     var isFirstUserInteraction: Bool {
         if let status = UserDefaults.standard.value(forKey: UserDefaultsConstant.firstUserInteraction) as? Bool {
             return status
@@ -18,15 +21,22 @@ class WaterViewModel: ObservableObject {
         }
         return target
     }()
+    var chosenUnit: UnitVolume = {
+        guard let unit = UserDefaults.standard.string(forKey: UserDefaultsConstant.chosenUnit) else {
+            return .milliliters
+        }
+        return unit == UnitVolume.milliliters.symbol ? .milliliters : .fluidOunces
+    }()
     
     var isGoalReached: Bool {
         round(drinkingTarget) == .zero
     }
     
     var targetText: String {
-        isGoalReached
+        let targetString = isMilliliters ? drinkingTarget.toMilliliters() : drinkingTarget.toOunces()
+        return isGoalReached
             ? "💦 Nice job! 💦"
-            : "Target: \(drinkingTarget.toMilliliters())"
+            : "Target: \(targetString)"
     }
     
     var minimumInterval: Double {
@@ -34,7 +44,7 @@ class WaterViewModel: ObservableObject {
     }
     
     var drinkText: String {
-        drinkingAmount.toMilliliters()
+        isMilliliters ? drinkingAmount.toMilliliters() : drinkingAmount.toOunces()
     }
     
     func didTapDrink() {
@@ -57,6 +67,11 @@ class WaterViewModel: ObservableObject {
     func updateTarget(newTarget: Double) {
         drinkingTarget = newTarget
         UserDefaults.standard.setValue(drinkingTarget, forKey: UserDefaultsConstant.waterTarget)
+    }
+
+    func updateUnit(newUnit: UnitVolume) {
+        chosenUnit = newUnit
+        UserDefaults.standard.setValue(chosenUnit.symbol, forKey: UserDefaultsConstant.chosenUnit)
     }
     
     func didTapReset() {

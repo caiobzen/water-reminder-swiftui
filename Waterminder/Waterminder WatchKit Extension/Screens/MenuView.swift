@@ -2,7 +2,8 @@ import SwiftUI
 
 struct MenuView: View {
     @State var target: Double
-    var newTargetSelected: (Double) -> Void
+    @State var selectedUnit: UnitVolume
+    var newSelections: (_ target: Double, _ unit: UnitVolume) -> Void
     var body: some View {
         VStack {
             Text("Select the target")
@@ -11,9 +12,29 @@ struct MenuView: View {
             Text(target.toMilliliters())
                 .font(.system(size: 24, weight: .semibold, design: .rounded))
                 .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
+                .onTapGesture {
+                    selectedUnit = selectedUnit == .milliliters ? .fluidOunces : .milliliters
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 25.0)
+                        .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
+                        .foregroundColor(.gray.opacity(selectedUnit == .milliliters ? 0.5 : 0))
+                )
+            Spacer()
+            Text(target.toOunces())
+                .font(.system(size: 24, weight: .semibold, design: .rounded))
+                .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
+                .onTapGesture {
+                    selectedUnit = selectedUnit == .milliliters ? .fluidOunces : .milliliters
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 25.0)
+                        .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
+                        .foregroundColor(.gray.opacity(selectedUnit == .fluidOunces ? 0.5 : 0))
+                )
             Spacer()
             Button(action: {
-                self.newTargetSelected(self.target)
+                self.newSelections(self.target, self.selectedUnit)
             }) {
                 Text("Save")
             }
@@ -26,7 +47,7 @@ struct MenuView: View {
     
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(target: 2000) { target in
+        MenuView(target: 2000, selectedUnit: .milliliters) { target, unit in
             print(target)
         }
     }
