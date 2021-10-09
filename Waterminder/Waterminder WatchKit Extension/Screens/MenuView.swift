@@ -4,34 +4,49 @@ struct MenuView: View {
     @State var target: Double
     @State var selectedUnit: UnitVolume
     var newSelections: (_ target: Double, _ unit: UnitVolume) -> Void
+    var isMilliliters: Bool {
+        selectedUnit == .milliliters
+    }
     var body: some View {
         VStack {
             Text("Select the target")
                 .font(.system(.headline, design: .rounded))
             Spacer()
-            Text(target.toMilliliters())
-                .font(.system(size: 24, weight: .semibold, design: .rounded))
-                .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
-                .onTapGesture {
-                    selectedUnit = selectedUnit == .milliliters ? .fluidOunces : .milliliters
-                }
-                .background(
-                    RoundedRectangle(cornerRadius: 25.0)
-                        .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
-                        .foregroundColor(.gray.opacity(selectedUnit == .milliliters ? 0.5 : 0))
-                )
+            HStack(spacing: 16) {
+                Text(target.toMilliliters())
+                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
+                    .onTapGesture {
+                        selectedUnit = selectedUnit == .milliliters ? .fluidOunces : .milliliters
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 25.0)
+                            .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
+                            .foregroundColor(.gray.opacity(isMilliliters ? 0.2 : 0))
+                    )
+                Image(systemName: "checkmark.circle.fill")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .opacity(isMilliliters ? 1 : 0)
+            }
             Spacer()
-            Text(target.toOunces())
-                .font(.system(size: 24, weight: .semibold, design: .rounded))
-                .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
-                .onTapGesture {
-                    selectedUnit = selectedUnit == .milliliters ? .fluidOunces : .milliliters
-                }
-                .background(
-                    RoundedRectangle(cornerRadius: 25.0)
-                        .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
-                        .foregroundColor(.gray.opacity(selectedUnit == .fluidOunces ? 0.5 : 0))
-                )
+            HStack(spacing: 16) {
+                Text(target.toOunces())
+                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
+                    .onTapGesture {
+                        selectedUnit = isMilliliters ? .fluidOunces : .milliliters
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 25.0)
+                            .padding(EdgeInsets(top: -2, leading: -8, bottom: -2, trailing: -8))
+                            .foregroundColor(.gray.opacity(isMilliliters ? 0 : 0.2))
+                    )
+                Image(systemName: "checkmark.circle.fill")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .opacity(isMilliliters ? 0 : 1)
+            }
             Spacer()
             Button(action: {
                 self.newSelections(self.target, self.selectedUnit)
