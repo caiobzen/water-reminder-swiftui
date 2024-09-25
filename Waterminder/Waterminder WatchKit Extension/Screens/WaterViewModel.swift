@@ -37,15 +37,19 @@ class WaterViewModel: ObservableObject {
         drinkingAmount.toMilliliters()
     }
     
+  
     func didTapDrink() {
+       HapticManager.shared.vibrate(for: .directionDown)
         guard floor(drinkingTarget - drinkingAmount) >= .zero else { return }
         saveToHealthKit()
         drinkingTarget -= round(drinkingAmount)
         waterLevel += CGFloat(drinkingAmount / 10)
         drinkingAmount = min(drinkingAmount, drinkingTarget)
+
     }
     
     private func saveToHealthKit() {
+        HapticManager.shared.vibrate(for: .click)
         let healthKit = HealthKitSetupAssistant()
         if isFirstUserInteraction {
             healthKit.requestPermissions()
@@ -60,6 +64,7 @@ class WaterViewModel: ObservableObject {
     }
     
     func didTapReset() {
+      HapticManager.shared.vibrate(for: .directionUp)
         waterLevel = .zero
         if let target = UserDefaults.standard.value(forKey: UserDefaultsConstant.waterTarget) as? Double {
             drinkingTarget = target
